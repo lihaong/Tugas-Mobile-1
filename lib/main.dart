@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tugas1tpm/dashboard.dart';
+
 void main() {
   runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Tugas TPM',
+    debugShowCheckedModeBanner: true,
+    title: 'Login Screen',
     theme: ThemeData(
       // This is the theme of your application.
       primarySwatch: Colors.blue,
@@ -56,9 +56,7 @@ class FirstRoute extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/image/UPN.png',
-                width: 200,
-                height: 200,),
+                FlutterLogo (size: 60),
                 SizedBox(
                   height: 40,
                 ),
@@ -67,10 +65,6 @@ class FirstRoute extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: 'username',
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-                    suffixIcon: Icon(
-                      Icons.person,
-                      color: Colors.blue,
-                    ),
                   ),
                 ),
                 SizedBox(
@@ -82,31 +76,25 @@ class FirstRoute extends StatelessWidget {
                   decoration: InputDecoration(
                     labelText: 'Password',
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-                    suffixIcon: Icon(
-                      Icons.lock,
-                      color: Colors.blue,
-
-                    ),
                   ),
                 ),
                 SizedBox(
                   height: 20,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    String user = 'belajar';
-                    String pass = '1234';
-                     if (getUser.text == user && getPass.text == pass) {
-                     {
-                       Route route = MaterialPageRoute(builder: (context) => Menu());
-                       Navigator.push(context, route);
-                      }
-                    } else {
-                       showAlertDialog(context);
-                     }
-                  },
-                  child: Text('Login'),
-                )
+                Container (
+                  width: 250,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      },
+                    child: Text('Login'),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                TextButton(onPressed: (){}, child: Text('Forgot Password', style: TextStyle(color: Colors.grey),))
+
+
               ],
             )),
       ),
